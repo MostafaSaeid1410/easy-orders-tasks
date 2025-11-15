@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+    --color-dark-950: #0b0f0e;
+    --color-dark-900: #141414;
+    --color-dark-800: #292929;
+    --color-dark-700: #333333;
+    --color-dark-600: #525252;
+    --color-dark-500: #666666;
+    --color-dark-400: #7a7a7a;
+    --color-dark-300: #8f8f8f;
+
+    --color-gray-700: #787a7c;
+    --color-gray-600: #818b9c;
+    --color-gray-500: #a3a3a3;
+    --color-gray-400: #b8b8b8;
+    --color-gray-300: #e0e0e0;
+    --color-gray-200: #f2f2f2;
+
+    --color-purple-600: #3e3e59;
+
+    --color-orange-500: #ffa439;
+
+    --color-black: #000000;
+    --color-white: #ffffff;
+
+    --spacing-0: 0px;
+    --spacing-1: 0.25rem; /* 4px */
+    --spacing-2: 0.5rem; /* 8px */
+    --spacing-3: 0.75rem; /* 12px */
+    --spacing-4: 1rem; /* 16px */
+    --spacing-5: 1.25rem; /* 20px */
+    --spacing-6: 1.5rem; /* 24px */
+    --spacing-8: 2rem; /* 32px */
+    --spacing-10: 2.5rem; /* 40px */
+    --spacing-12: 3rem; /* 48px */
+    --spacing-16: 4rem; /* 64px */
+    --spacing-20: 5rem; /* 80px */
+    --spacing-24: 6rem; /* 96px */
+    --spacing-32: 8rem; /* 128px */
+    --spacing-40: 10rem; /* 160px */
+    --spacing-48: 12rem; /* 192px */
+    --spacing-56: 14rem; /* 224px */
+    --spacing-64: 16rem; /* 256px */
+}
+
+@layer base {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        font-family:
+            system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            "Helvetica Neue",
+            Arial,
+            sans-serif;
+        line-height: 1.5;
+        color: var(--color-neutral-900);
+        background-color: var(--color-neutral-50);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 600;
+        line-height: 1.2;
+        color: var(--color-neutral-900);
+    }
+}

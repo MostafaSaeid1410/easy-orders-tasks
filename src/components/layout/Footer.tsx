@@ -129,7 +129,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 md:flex md:gap-30">
+                <div className="flex flex-wrap gap-x-[58px] gap-y-[25px] md:gap-30">
                     {footerLinks.map((section) => (
                         <div
                             key={section.title}
@@ -153,7 +153,7 @@ export default function Footer() {
                 </div>
             </div>
 
-            <div className="mx-auto max-w-xl px-4 md:px-0">
+            <div className="mx-auto max-w-xl md:px-0">
                 <div className="flex flex-col gap-4 [border-top-width:0.5px] border-dashed border-gray-500 pt-6 pb-[29px] md:flex-row md:justify-between md:gap-0">
                     <span className="inline-block text-sm font-normal text-purple-600 md:text-base">
                         © John Lewis plc 2001 - 2024

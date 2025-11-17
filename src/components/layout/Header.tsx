@@ -10,7 +10,7 @@ export default function Header() {
     const cartItemCount = getTotalItems();
 
     return (
-        <header className="mb-[31px] [border-bottom-width:0.5px] border-dashed border-gray-500 py-4 md:py-[31px]">
+        <header className="mb-6 [border-bottom-width:0.5px] border-dashed border-gray-500 py-4 md:mb-[31px] md:py-[31px]">
             <div className="flex items-center justify-between">
                 <div className="flex items-center">
                     <img
@@ -50,12 +50,6 @@ export default function Header() {
 
                 <nav className="flex items-center gap-3 md:hidden">
                     <SearchInput />
-
-                    <IconButton
-                        className="p-0"
-                        icon={heart}
-                        ariaLabel="View favorites"
-                    />
 
                     <IconButton
                         className="p-0"

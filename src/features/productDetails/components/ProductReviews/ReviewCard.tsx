@@ -23,7 +23,6 @@ export const ReviewCard: React.FC<ReviewCardProps> = memo(
         id,
         rating,
         title,
-        content,
         author,
         date,
         helpful,
@@ -32,32 +31,25 @@ export const ReviewCard: React.FC<ReviewCardProps> = memo(
         onUnhelpful,
     }) => {
         return (
-            <div
-                className="flex flex-col gap-3 border-b border-gray-300 pb-4 md:flex-row md:gap-4 md:pb-6"
-                key={id}
-            >
-                <div className="flex-1 space-y-2 md:space-y-3">
-                    <div>
-                        <Rating rating={rating} showNumber={false} size="sm" />
-                    </div>
+            <div className="flex items-start justify-between" key={id}>
+                <div className="flex flex-col gap-4">
+                    <Rating rating={rating} showNumber={false} size="sm" />
 
-                    <div>
-                        <h4 className="font-600 text-dark-900 text-sm md:text-base">
+                    <div className="flex flex-col gap-1">
+                        <h4 className="text-dark-900 text-lg md:text-sm">
                             {title}
                         </h4>
+
+                        {/* {content && (
+                            <p className="text-dark-600 text-xs leading-relaxed md:text-sm">
+                                {content}
+                            </p>
+                        )} */}
+
+                        <p className="text-gray-600 md:text-xs">{date}</p>
                     </div>
 
-                    {content && (
-                        <p className="text-dark-600 text-xs leading-relaxed md:text-sm">
-                            {content}
-                        </p>
-                    )}
-
-                    <p className="text-dark-500 text-[10px] md:text-xs">
-                        {date}
-                    </p>
-
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                         {author.avatar ? (
                             <img
                                 src={author.avatar}
@@ -65,18 +57,18 @@ export const ReviewCard: React.FC<ReviewCardProps> = memo(
                                 className="h-7 w-7 rounded-full object-cover md:h-8 md:w-8"
                             />
                         ) : (
-                            <div className="font-600 text-dark-700 flex h-7 w-7 items-center justify-center rounded-full bg-gray-300 text-[10px] md:h-8 md:w-8 md:text-xs">
+                            <div className="text-dark-700 flex h-7 w-7 items-center justify-center rounded-full bg-gray-300 text-[10px] md:h-8 md:w-8 md:text-xs">
                                 {author.name.charAt(0).toUpperCase()}
                             </div>
                         )}
 
-                        <span className="font-600 text-dark-900 text-xs md:text-sm">
+                        <span className="text-dark-950 text-xs leading-[160%] md:text-sm">
                             {author.name}
                         </span>
                     </div>
                 </div>
 
-                <div className="flex flex-row items-center justify-start gap-3 md:flex-col md:items-end md:gap-2">
+                <div className="flex gap-4 self-end">
                     <div className="flex gap-2 md:gap-3">
                         <Button
                             variant="secondary"
@@ -87,9 +79,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = memo(
                             leftIcon={likeIcon}
                         >
                             {helpful > 0 && (
-                                <span className="text-dark-900 font-600">
-                                    {helpful}
-                                </span>
+                                <span className="text-dark-900">{helpful}</span>
                             )}
                         </Button>
 
@@ -102,7 +92,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = memo(
                             leftIcon={dislikeIcon}
                         >
                             {unhelpful > 0 && (
-                                <span className="text-dark-900 font-600">
+                                <span className="text-dark-900">
                                     {unhelpful}
                                 </span>
                             )}

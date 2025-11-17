@@ -6,6 +6,7 @@
     --color-dark-850: #121212;
     --color-dark-800: #292929;
     --color-dark-700: #333333;
+    --color-dark-650: #383838;
     --color-dark-600: #525252;
     --color-dark-500: #666666;
     --color-dark-400: #7a7a7a;
@@ -47,24 +48,12 @@
     --spacing-64: 16rem; /* 256px */
 
     --font-family-clash: "Clash Grotesk", sans-serif;
-    --font-weight-600: 600;
-    --line-height-120: 1.2; /* 120% */
 
     --container-sm: 40rem; /* 640px  */
     --container-md: 48rem; /* 768px  */
     --container-lg: 64rem; /* 1024px */
     --container-xl: 75rem; /* 1200px */
     --container-2xl: 90rem; /* 1440px */
-
-    --font-size-xs: 0.75rem; /* 12px */
-    --font-size-s: 0.875rem; /* 14px */
-    --font-size-m: 1rem; /* 16px */
-    --font-size-l: 1.125rem; /* 18px */
-    --font-size-xl: 1.25rem; /* 20px */
-    --font-size-2xl: 1.5rem; /* 24px */
-    --font-size-3xl: 1.875rem; /* 30px */
-    --font-size-4xl: 2.25rem; /* 36px */
-    --font-size-5xl: 3rem; /* 48px */
 }
 
 @layer base {

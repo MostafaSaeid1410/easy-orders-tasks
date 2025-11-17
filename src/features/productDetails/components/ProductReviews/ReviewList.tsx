@@ -25,6 +25,7 @@ type ReviewListProps = {
     onTabChange?: (tab: ReviewTab) => void;
     onHelpful?: (reviewId: string) => void;
     onUnhelpful?: (reviewId: string) => void;
+    onFilterClick?: () => void;
 };
 
 export const ReviewList: React.FC<ReviewListProps> = ({
@@ -34,6 +35,7 @@ export const ReviewList: React.FC<ReviewListProps> = ({
     onTabChange,
     onHelpful,
     onUnhelpful,
+    onFilterClick,
 }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [internalTab, setInternalTab] = useState<ReviewTab>("all");
@@ -77,6 +79,7 @@ export const ReviewList: React.FC<ReviewListProps> = ({
                 <ReviewTabs
                     activeTab={activeTab}
                     onTabChange={handleTabChange}
+                    onFilterClick={onFilterClick}
                 />
             </div>
 

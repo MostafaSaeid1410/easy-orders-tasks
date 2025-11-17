@@ -9,6 +9,7 @@ const StarRating: React.FC<{ rating: number; iconSrc: string }> = ({
 }) => (
     <div className="flex items-center gap-1">
         <ReactSVG
+            wrapper="div"
             src={iconSrc}
             className="h-[20px] w-[20px] text-orange-500"
             beforeInjection={(svg) => {

@@ -39,6 +39,7 @@ const Rating: FC<RatingProps> = ({
                     return (
                         <div key={index} className="relative">
                             <ReactSVG
+                                wrapper="div"
                                 src={starRating}
                                 className={`${sizeClasses[size]}`}
                             />
@@ -48,6 +49,7 @@ const Rating: FC<RatingProps> = ({
                                 style={{ width: `${fillPercentage}%` }}
                             >
                                 <ReactSVG
+                                    wrapper="div"
                                     src={starRating}
                                     className={`${sizeClasses[size]} text-orange-500`}
                                 />

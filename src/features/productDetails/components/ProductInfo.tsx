@@ -196,7 +196,7 @@ export default function ProductInfo({
 
     return (
         <div className="flex w-full max-w-[600px] flex-col gap-5 md:gap-7">
-            <div className="flex flex-col gap-4 [border-bottom-width:0.5px] border-dashed border-gray-500 pb-5 md:gap-6 md:pb-7">
+            <div className="flex flex-col gap-2 [border-bottom-width:0.5px] border-dashed border-gray-500 pb-5 md:gap-6 md:pb-7">
                 {product.categories?.[0]?.name && (
                     <p className="text-dark-300 text-sm font-medium md:text-base">
                         {product.categories[0].name}
@@ -207,16 +207,17 @@ export default function ProductInfo({
                     {product.name}
                 </h1>
 
-                <div className="flex flex-col gap-4 md:flex-row md:flex-wrap md:items-center md:justify-between md:gap-6">
+                <div className="flex w-full flex-wrap items-center justify-between gap-2 md:gap-6">
                     <Price
+                        className="flex items-baseline gap-2"
                         currentPriceClassName="text-2xl md:text-[28px]"
                         currentPrice={currentPrice}
                         originalPrice={originalPrice}
                     />
 
-                    <div className="flex items-center gap-2">
-                        <span className="text-dark-500 text-base leading-1 md:text-xl">
-                            1,2358 Sold
+                    <div className="flex flex-wrap items-center gap-2 text-sm md:text-base">
+                        <span className="text-dark-500 font-medium md:text-xl">
+                            1,238 Sold
                         </span>
 
                         <ReactSVG src={dot} />
@@ -334,7 +335,7 @@ export default function ProductInfo({
                 </Button>
             </div>
 
-            <div className="mt-[34px]">
+            <div className="mt-[34px] hidden md:block">
                 <a
                     href="#"
                     className="text-dark-400 block text-sm leading-[120%] underline"

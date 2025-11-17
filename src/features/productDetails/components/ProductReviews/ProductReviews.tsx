@@ -110,7 +110,7 @@ export const ProductReview: React.FC<ProductReviewProps> = ({
             </div>
 
             <div className="flex flex-col gap-6 md:flex-row">
-                <div className="w-full shrink-0 md:w-80">
+                <div className="hidden w-full shrink-0 md:block md:w-80">
                     <ReviewsFilter
                         selectedFilters={selectedFilters}
                         onFilterChange={handleFilterChange}
@@ -124,6 +124,9 @@ export const ProductReview: React.FC<ProductReviewProps> = ({
                         onTabChange={setSelectedTab}
                         onHelpful={onHelpful}
                         onUnhelpful={onUnhelpful}
+                        onFilterClick={() => {
+                            // TODO: Implement mobile filter drawer/modal
+                        }}
                     />
                 </div>
             </div>

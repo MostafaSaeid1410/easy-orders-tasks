@@ -20,11 +20,8 @@ export const ReviewRatingBreakdown: React.FC<ReviewRatingBreakdownProps> = ({
         <div className="w-full flex-1 md:w-auto">
             <div className="flex flex-col gap-2 md:gap-3">
                 {ratingBreakdown.map((item) => (
-                    <div
-                        key={item.rating}
-                        className="flex items-center gap-2 md:gap-3"
-                    >
-                        <div className="font-600 text-dark-900 flex w-10 items-end justify-end gap-0.5 text-xs md:w-12 md:gap-1 md:text-sm">
+                    <div key={item.rating} className="flex items-center gap-3">
+                        <div className="font-600 text-dark-900 flex items-center justify-start gap-0.5 text-xs md:w-12 md:gap-1 md:text-sm">
                             <span className="flex items-center leading-none">
                                 {item.rating}
                             </span>
@@ -34,8 +31,8 @@ export const ReviewRatingBreakdown: React.FC<ReviewRatingBreakdownProps> = ({
                                 style={{ lineHeight: 0 }}
                             >
                                 <ReactSVG
+                                    wrapper="div"
                                     src={starRating}
-                                    className="h-4 w-4 shrink-0 text-orange-500 md:h-[20px] md:w-[20px]"
                                     beforeInjection={(svg) => {
                                         svg.setAttribute(
                                             "fill",

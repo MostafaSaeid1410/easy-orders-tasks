@@ -13,7 +13,7 @@ type BreadcrumbsProps = {
 const Breadcrumbs: FC<BreadcrumbsProps> = ({ items, className = "" }) => {
     return (
         <nav
-            className={`flex items-center gap-1.5 text-xs font-medium md:gap-2 md:text-sm ${className}`}
+            className={`flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs font-medium md:flex-nowrap md:gap-2 md:text-sm ${className}`}
             aria-label="Breadcrumb"
         >
             {items.map((item, index) => (
@@ -30,7 +30,7 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({ items, className = "" }) => {
                             {item.label}
                         </a>
                     ) : (
-                        <span className="text-dark-800 leading-[160%] font-medium whitespace-nowrap">
+                        <span className="text-dark-800 text-sm leading-[160%] font-medium whitespace-nowrap">
                             {item.label}
                         </span>
                     )}

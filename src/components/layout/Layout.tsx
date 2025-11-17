@@ -13,7 +13,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         <div className="flex min-h-screen flex-col">
             <PromotionalBanner />
 
-            <div className="mx-auto w-full max-w-xl px-4 md:px-0">
+            <div className="mx-auto w-full max-w-xl px-[19px] lg:px-0">
                 <Header />
 
                 <main className="flex-1">{children}</main>

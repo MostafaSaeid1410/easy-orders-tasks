@@ -31,3 +31,7 @@ export { default as userIcon } from "./user-icon.svg";
 export { default as likeIcon } from "./like.svg";
 
 export { default as dislikeIcon } from "./dislike.svg";
+
+export { default as menuIcon } from "./menu.svg";
+
+export { default as filterIcon } from "./filter.svg";

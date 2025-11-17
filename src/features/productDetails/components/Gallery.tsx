@@ -44,28 +44,12 @@ export default function Gallery({ images }: GalleryProps) {
                             className="h-full w-full object-contain"
                         />
                     )}
+                </div>
 
-                    <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
+                <div className="flex w-[56px] shrink-0 flex-col justify-between gap-6 md:w-auto md:gap-0">
+                    <div className="flex flex-col gap-3 md:gap-[20px]">
                         <IconButton
-                            icon={chevronLeft}
-                            className="bg-white/80 p-2 backdrop-blur-sm hover:bg-white"
-                            onClick={handlePrevious}
-                            ariaLabel="Previous image"
-                        />
-                    </div>
-
-                    <div className="absolute inset-y-0 right-0 flex items-center md:hidden">
-                        <IconButton
-                            icon={chevronRight}
-                            className="bg-white/80 p-2 backdrop-blur-sm hover:bg-white"
-                            onClick={handleNext}
-                            ariaLabel="Next image"
-                        />
-                    </div>
-
-                    <div className="absolute top-4 right-4 hidden flex-col gap-3 md:flex">
-                        <IconButton
-                            className="bg-white/80 p-3 backdrop-blur-sm hover:bg-white"
+                            className="bg-gray-200 p-3 md:p-4"
                             icon={share}
                             onClick={handleShare}
                             ariaLabel="Share product"
@@ -73,10 +57,8 @@ export default function Gallery({ images }: GalleryProps) {
 
                         <IconButton
                             icon={heart}
-                            className={`p-3 backdrop-blur-sm hover:bg-white ${
-                                isAddedToWishList
-                                    ? "bg-red-100/80"
-                                    : "bg-white/80"
+                            className={`p-3 md:p-4 ${
+                                isAddedToWishList ? "bg-red-100" : "bg-gray-200"
                             }`}
                             onClick={handleAddToWishList}
                             ariaLabel={
@@ -86,67 +68,23 @@ export default function Gallery({ images }: GalleryProps) {
                             }
                         />
                     </div>
-                </div>
 
-                <div className="hidden md:block">
-                    <div className="flex h-full flex-col justify-between">
-                        <div className="flex flex-col gap-[20px]">
-                            <IconButton
-                                className="bg-gray-200 p-4"
-                                icon={share}
-                                onClick={handleShare}
-                                ariaLabel="Share product"
-                            />
+                    <div className="flex flex-col gap-3 md:gap-5">
+                        <IconButton
+                            icon={chevronLeft}
+                            className="bg-gray-200 p-3 md:p-4"
+                            onClick={handlePrevious}
+                            ariaLabel="Previous image"
+                        />
 
-                            <IconButton
-                                icon={heart}
-                                className={`p-4 ${isAddedToWishList ? "bg-red-100" : "bg-gray-200"}`}
-                                onClick={handleAddToWishList}
-                                ariaLabel={
-                                    isAddedToWishList
-                                        ? "Remove from favorites"
-                                        : "Add to favorites"
-                                }
-                            />
-                        </div>
-
-                        <div className="flex flex-col gap-5">
-                            <IconButton
-                                icon={chevronLeft}
-                                className="bg-gray-200 p-4"
-                                onClick={handlePrevious}
-                                ariaLabel="Previous image"
-                            />
-
-                            <IconButton
-                                icon={chevronRight}
-                                className="bg-gray-200 p-4"
-                                onClick={handleNext}
-                                ariaLabel="Next image"
-                            />
-                        </div>
+                        <IconButton
+                            icon={chevronRight}
+                            className="bg-gray-200 p-3 md:p-4"
+                            onClick={handleNext}
+                            ariaLabel="Next image"
+                        />
                     </div>
                 </div>
-            </div>
-
-            <div className="flex justify-center gap-4 md:hidden">
-                <IconButton
-                    className="bg-gray-200 p-3"
-                    icon={share}
-                    onClick={handleShare}
-                    ariaLabel="Share product"
-                />
-
-                <IconButton
-                    icon={heart}
-                    className={`p-3 ${isAddedToWishList ? "bg-red-100" : "bg-gray-200"}`}
-                    onClick={handleAddToWishList}
-                    ariaLabel={
-                        isAddedToWishList
-                            ? "Remove from favorites"
-                            : "Add to favorites"
-                    }
-                />
             </div>
 
             <div className="flex gap-3 overflow-x-auto pb-2 md:gap-[20.24px] md:overflow-visible md:pb-0">

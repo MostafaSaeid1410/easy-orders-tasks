@@ -24,7 +24,9 @@ const Price: FC<PriceProps> = ({
                 <span className="text-dark-500 text-lg line-through">
                     {currency}
 
-                    {originalPrice.toFixed(2)}
+                    {originalPrice % 1 === 0
+                        ? originalPrice.toString()
+                        : originalPrice.toFixed(2)}
                 </span>
             )}
 
@@ -36,7 +38,9 @@ const Price: FC<PriceProps> = ({
             >
                 {currency}
 
-                {currentPrice.toFixed(2)}
+                {currentPrice % 1 === 0
+                    ? currentPrice.toString()
+                    : currentPrice.toFixed(2)}
             </span>
         </div>
     );

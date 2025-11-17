@@ -55,10 +55,7 @@ export default function ProductPage() {
 
     return (
         <div className="mb-10 flex flex-col gap-6 md:mb-20 md:gap-7.75">
-            <Breadcrumbs
-                items={breadcrumbItems}
-                className="overflow-x-auto pb-2"
-            />
+            <Breadcrumbs items={breadcrumbItems} />
 
             <div className="flex flex-col gap-10 md:gap-20">
                 <div className="flex flex-col gap-6 border-gray-500 md:flex-row md:justify-between md:gap-8">

@@ -32,16 +32,16 @@ export default function PromotionalBanner() {
     };
 
     return (
-        <div className="bg-black px-4 py-2 text-white md:py-2.5">
-            <div className="mx-auto flex max-w-xl items-center justify-center gap-2 text-xs md:text-sm">
+        <div className="bg-black px-8 py-3 text-white">
+            <div className="mx-auto flex max-w-xl items-center justify-center gap-2 text-sm md:text-sm">
                 <p className="text-center md:text-left">
                     New season coming! Discount 10% for all product! Checkout
-                    Now!
+                    Now!&nbsp;
+                    <span className="bg-dark-650 rounded-full px-[6.5px] py-[3px] text-[11px] leading-[100%] font-medium text-white">
+                        {formatTime(timeLeft.hours)}:
+                        {formatTime(timeLeft.minutes)}
+                    </span>
                 </p>
-
-                <div className="shrink-0 font-mono text-xs font-semibold md:ml-4 md:text-sm">
-                    {formatTime(timeLeft.hours)}:{formatTime(timeLeft.minutes)}
-                </div>
             </div>
         </div>
     );

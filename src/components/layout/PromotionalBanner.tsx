@@ -33,8 +33,8 @@ export default function PromotionalBanner() {
 
     return (
         <div className="bg-black px-4 py-2 text-white md:py-2.5">
-            <div className="mx-auto flex max-w-xl items-center justify-between gap-2 text-xs md:text-sm">
-                <p className="flex-1 text-center md:text-left">
+            <div className="mx-auto flex max-w-xl items-center justify-center gap-2 text-xs md:text-sm">
+                <p className="text-center md:text-left">
                     New season coming! Discount 10% for all product! Checkout
                     Now!
                 </p>

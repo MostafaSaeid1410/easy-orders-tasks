@@ -1,5 +1,6 @@
 import js from "@eslint/js";
 import stylistic from "@stylistic/eslint-plugin";
+import react from "eslint-plugin-react"; // Add this
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import { defineConfig, globalIgnores } from "eslint/config";
@@ -18,6 +19,7 @@ export default defineConfig([
         ],
         plugins: {
             "@stylistic": stylistic,
+            react: react,
         },
         languageOptions: {
             ecmaVersion: 2020,
@@ -46,7 +48,8 @@ export default defineConfig([
                 { blankLine: "always", prev: "multiline-const", next: "*" },
                 { blankLine: "always", prev: "directive", next: "*" },
             ],
-            "@stylistic/jsx-newline": ["error", { prevent: false }],
+            "@stylistic/jsx-newline": "error",
+            "react/self-closing-comp": "error",
         },
     },
 ]);

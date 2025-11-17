@@ -159,7 +159,7 @@ export default function Footer() {
                         © John Lewis plc 2001 - 2024
                     </span>
 
-                    <div className="flex gap-4 md:gap-8">
+                    <div className="flex justify-end gap-4 md:gap-8">
                         <Dropdown
                             label={selectedLanguage}
                             items={languages}

@@ -1,73 +1,155 @@
-# React + TypeScript + Vite
+# Easy Orders - Product Page Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive e-commerce product page application built with React, TypeScript, and Vite. This application showcases product details, reviews, and shopping cart functionality with a clean, user-friendly interface.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Product Details Page**: Display product information with image gallery, pricing, variants, and specifications
+- **Product Reviews**: Comprehensive review system with ratings, filters, and breakdown statistics
+- **Shopping Cart**: Full-featured cart with add/remove items, quantity management, and price calculations
+- **Responsive Design**: Mobile-first design that works seamlessly across all devices
+- **Product Variants**: Support for product variants (size, color, etc.) with proper cart management
+- **Related Products**: Display related and popular products
+- **API Integration**: Fetches real product data from Easy Orders API
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **Tailwind CSS** - Utility-first CSS framework
+- **Zustand** - Lightweight state management
+- **React Query (TanStack Query)** - Data fetching and caching
+- **React Router** - Client-side routing
+- **Immer** - Immutable state updates
 
-## Expanding the ESLint configuration
+## 📦 Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Clone the repository:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone <repository-url>
+cd easy-orders-task
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+## 🏃 Development
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173` (or the next available port).
+
+## 🏗️ Build
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+The production build will be in the `dist` directory.
+
+## 📝 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npm run format` - Format code with Prettier
+- `npm run format:check` - Check code formatting
+
+## 📁 Project Structure
+
+```
+src/
+├── api/                    # API configuration
+│   └── config.ts          # API endpoints and base URL
+├── assets/                 # Static assets
+│   ├── icons/             # SVG icons
+│   ├── images/            # Image assets
+│   └── styles/            # Global styles
+├── components/             # Reusable components
+│   ├── cart/              # Shopping cart components
+│   ├── layout/            # Layout components (Header, Footer)
+│   └── ui/                # UI components (Button, Badge, etc.)
+├── features/               # Feature-based modules
+│   ├── productDetails/    # Product details feature
+│   │   ├── api/          # Product API calls
+│   │   ├── components/   # Product-specific components
+│   │   ├── hooks/        # Custom hooks
+│   │   └── utils/        # Utility functions
+│   └── productList/       # Product listing feature
+├── pages/                  # Page components
+│   └── ProductPage.tsx   # Main product page
+├── providers/              # Context providers
+│   └── QueryProvider/    # React Query provider
+├── stores/                 # State management
+│   └── cart/             # Shopping cart store (Zustand)
+└── dummyData/              # Mock data for development
+```
+
+## 🔧 Configuration
+
+### API Configuration
+
+The API base URL is configured in `src/api/config.ts`:
+
+```typescript
+export const API_BASE_URL = "https://api.easy-orders.net/api/v1";
+```
+
+### Environment Variables
+
+Create a `.env` file in the root directory if you need to customize the API URL:
+
+```env
+VITE_API_BASE_URL=https://api.easy-orders.net/api/v1
+```
+
+## 🎨 Styling
+
+The project uses Tailwind CSS for styling. Global styles are defined in `src/assets/styles/global.css`.
+
+## 🧪 State Management
+
+- **Zustand** is used for shopping cart state management
+- **React Query** handles server state (product data fetching)
+- Cart state persists during the session
+
+## 📱 Features in Detail
+
+### Product Details
+
+- Image gallery with multiple views
+- Product information (name, description, price)
+- Variant selection (size, color, etc.)
+- Stock availability
+- Add to cart functionality
+
+### Shopping Cart
+
+- Add/remove items
+- Update quantities
+- Calculate totals
+- Handle product variants
+- Cart drawer UI
+
+### Product Reviews
+
+- Review listing with pagination
+- Rating breakdown
+- Review filtering
+- Average rating display
+
+## 👤 Author
+
+Mostafa Saeid
